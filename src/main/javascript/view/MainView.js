@@ -68,7 +68,9 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
       } else {
 
         // Default validator
-        this.model.validatorUrl = window.location.protocol + '//online.swagger.io/validator';
+        // Use 'http' if served from filesystem
+        var protocol = (window.location.protocol === 'file:') ? 'http:' : window.location.protocol;
+        this.model.validatorUrl = protocol + '//online.swagger.io/validator';
       }
     }
   },
