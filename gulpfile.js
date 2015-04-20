@@ -56,7 +56,8 @@ gulp.task('dist', ['clean'], function() {
   return es.merge(
       gulp.src([
         './src/main/javascript/**/*.js',
-        './node_modules/swagger-client/browser/swagger-client.js'
+        '../swagger-js/browser/swagger-client.js'
+        // './node_modules/swagger-client/browser/swagger-client.js'
       ]),
       templates()
     )
