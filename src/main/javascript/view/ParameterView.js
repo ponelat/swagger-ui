@@ -1,7 +1,8 @@
 'use strict';
 
 SwaggerUi.Views.ParameterView = Backbone.View.extend({
-  initialize: function(){
+  initialize: function(opts){
+    this.options = opts || {};
     Handlebars.registerHelper('isArray', function(param, opts) {
       if (param.type.toLowerCase() === 'array' || param.allowMultiple) {
         return opts.fn(this);

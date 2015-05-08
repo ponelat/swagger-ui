@@ -2,7 +2,7 @@
 
 SwaggerUi.Views.ResourceView = Backbone.View.extend({
   initialize: function(opts) {
-    opts = opts || {};
+    this.options = opts = opts || {};
     this.router = opts.router;
     this.auths = opts.auths;
     if ('' === this.model.description) {

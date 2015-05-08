@@ -11,6 +11,7 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
   initialize: function(opts){
     var sorterOption, sorterFn, key, value;
     opts = opts || {};
+    this.options = opts;
 
     this.router = opts.router;
 

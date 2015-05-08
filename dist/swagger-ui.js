@@ -20656,6 +20656,7 @@ SwaggerUi.Views.MainView = Backbone.View.extend({
   initialize: function(opts){
     var sorterOption, sorterFn, key, value;
     opts = opts || {};
+    this.options = opts;
 
     this.router = opts.router;
 
@@ -20798,7 +20799,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   },
 
   initialize: function(opts) {
-    opts = opts || {};
+    this.options = opts = opts || {};
     this.router = opts.router;
     this.auths = opts.auths;
     this.parentId = this.model.parentId;
@@ -21471,7 +21472,8 @@ SwaggerUi.Views.ParameterContentTypeView = Backbone.View.extend({
 'use strict';
 
 SwaggerUi.Views.ParameterView = Backbone.View.extend({
-  initialize: function(){
+  initialize: function(opts){
+    this.options = opts || {};
     Handlebars.registerHelper('isArray', function(param, opts) {
       if (param.type.toLowerCase() === 'array' || param.allowMultiple) {
         return opts.fn(this);
@@ -21574,7 +21576,7 @@ SwaggerUi.Views.ParameterView = Backbone.View.extend({
 
 SwaggerUi.Views.ResourceView = Backbone.View.extend({
   initialize: function(opts) {
-    opts = opts || {};
+    this.options = opts = opts || {};
     this.router = opts.router;
     this.auths = opts.auths;
     if ('' === this.model.description) {
@@ -21643,6 +21645,7 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
     Docs[fnName](e.currentTarget.getAttribute('data-id'));
   }
 });
+
 'use strict';
 
 SwaggerUi.Views.ResponseContentTypeView = Backbone.View.extend({

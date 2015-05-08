@@ -13,7 +13,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   },
 
   initialize: function(opts) {
-    opts = opts || {};
+    this.options = opts = opts || {};
     this.router = opts.router;
     this.auths = opts.auths;
     this.parentId = this.model.parentId;
